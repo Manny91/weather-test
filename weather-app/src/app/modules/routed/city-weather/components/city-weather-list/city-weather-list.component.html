@@ -1,0 +1,14 @@
+<div class="table-row wrapper ">
+    <div class="wrapper header">
+        <div class="text">City</div>
+        <div class="text">12 am</div>
+        <div class="text">6 am</div>
+        <div class="text">12pm</div>
+        <div class="text">6pm</div>
+    </div>
+
+    <div class="table-row wrapper"
+        *ngFor="let cityWeather of citiesWeather">
+        <app-city-weather-list-item [cityWeather]="cityWeather"></app-city-weather-list-item>
+    </div>
+</div>

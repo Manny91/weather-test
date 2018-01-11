@@ -1,6 +1,19 @@
 <div class="container">
+    <div>
+        <h1>
+            24 hours weather forecast
+        </h1>
+    </div>
 
-    <h2>
-        24 hours weather forecast
-    </h2>
+
+    <div class="cities-weather-search-box">
+        <form [formGroup]="form">
+            <input class="city-weather-input" type="text" [formControl]="form.controls.query">
+            <button class="city-weather-search" (click)="cityWeatherSearch()"> Search </button>
+        </form>
+
+    </div>
+    <div class="margin-top2">
+        <app-city-weather-list [citiesWeather]="citiesWeather"></app-city-weather-list>
+    </div>
 </div>
