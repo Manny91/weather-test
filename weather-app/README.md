@@ -2,6 +2,8 @@
 
 This is a city weather search app that allows to the user to search a city by name and it will display the temperatures of the day.
 
+I've used latest version of angular-cli and ngrx-store for the application state management.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
 ## Development server

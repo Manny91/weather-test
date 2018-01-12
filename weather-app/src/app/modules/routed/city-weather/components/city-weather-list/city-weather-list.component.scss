@@ -14,10 +14,8 @@
 /deep/ .table-cell {
     box-sizing: border-box;
     flex-grow: 1;
-    width: 100%;  // Default to full width
+    width: 100%;
     padding: 0.7em 0.7em;
-    overflow: hidden; // Or flex might break
-    list-style: none;
     border: solid 3px black;
     width: 20%;
 }

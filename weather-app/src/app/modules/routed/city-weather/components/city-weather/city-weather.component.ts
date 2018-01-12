@@ -46,7 +46,6 @@ export class CityWeatherComponent {
 
     public cityWeatherFetched = (data: any) => {
         const cityWeather = new CityWeather(data);
-        console.log(cityWeather);
         this.store.dispatch(this.cityWeatherActions.cityWeatherFetched(cityWeather));
     }
 
