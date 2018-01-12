@@ -30,11 +30,15 @@ describe('Weather app search', () => {
         expect(page.getCityNamesList()).toEqual([cityToSearch]);
     });
 
-    it('should add in the list a city when searching for it', () => {
+    it('should not add multiple times a city when searching for it ', () => {
         page.navigateTo();
-        const citiesToSearch = ['London', 'Madrid'];
+        const london = 'London';
+        const madrid = 'Madrid';
+        const citiesToSearch = [london, madrid];
         page.searchCity(citiesToSearch[0]);
         expect(page.getCityNamesList()).toEqual([citiesToSearch[0]]);
+        page.searchCity(citiesToSearch[1]);
+        expect(page.getCityNamesList()).toEqual(citiesToSearch);
         page.searchCity(citiesToSearch[1]);
         expect(page.getCityNamesList()).toEqual(citiesToSearch);
     });
