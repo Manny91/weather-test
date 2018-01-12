@@ -1,5 +1,4 @@
 import { CityWeatherState } from './../../state/city-weather.state';
-import { Observable } from 'rxjs';
 import { CityWeather } from './../../entities/city-weather';
 import { CityWeatherActions } from './../../actions/city-weather.action';
 import { FormGroup } from '@angular/forms';
@@ -8,6 +7,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CityWeatherForm } from '../../entities/city-weather-form';
 import { CityWeatherService } from '../../services/city-weather.service';
+import { Subject } from 'rxjs/Subject';
 
 
 @Component({
@@ -19,12 +19,15 @@ export class CityWeatherComponent {
 
     public form: FormGroup;
     public citiesWeather: CityWeather[] = [];
+    public toSearch$: Subject<string>;
     constructor (
         public formBuilderService: FormBuilderService,
         public cityWeatherActions: CityWeatherActions,
         public cityWeatherService: CityWeatherService,
         public store: Store<any>,
     ) {
+        this.toSearch$ = new Subject();
+        this.toSearch$.subscribe(this.cityWeatherSearch);
         this.form = formBuilderService.buildSearchCityWeatherForm();
         this.store.select('citiesWeather').subscribe(this.loadCities);
     }
@@ -34,10 +37,10 @@ export class CityWeatherComponent {
         this.citiesWeather = cityWeatherState.items;
     }
 
-    public cityWeatherSearch = () => {
-        const cityWeatherQuery = new CityWeatherForm(this.form.value).query;
+    public cityWeatherSearch = (cityToSearch: string) => {
+
         this.store.dispatch(this.cityWeatherActions.cityWeatherFetching());
-        this.cityWeatherService.getCityWeather({q: cityWeatherQuery}).subscribe(this.cityWeatherFetched);
+        this.cityWeatherService.getCityWeather({q: cityToSearch}).subscribe(this.cityWeatherFetched);
         this.form.reset();
     }
 

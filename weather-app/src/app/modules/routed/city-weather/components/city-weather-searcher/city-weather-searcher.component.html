@@ -1,0 +1,6 @@
+<div class="cities-weather-search-box">
+    <form [formGroup]="form">
+        <input class="city-weather-input" type="text" [formControl]="form.controls.query">
+        <button class="city-weather-search" (click)="search()"> Search </button>
+    </form>
+</div>

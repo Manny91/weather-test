@@ -1,0 +1,33 @@
+.cities-weather-search-box {
+    margin-top: 8%;
+    .city-weather-input {
+        width: 70%;
+        padding: .175rem .475rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .city-weather-search {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid black;
+        padding: .175rem .475rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        &:focus {
+            outline: none;
+        }
+    }
+}

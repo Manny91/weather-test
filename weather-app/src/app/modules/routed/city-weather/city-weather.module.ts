@@ -1,3 +1,4 @@
+import { CityWeatherSearcherComponent } from './components/city-weather-searcher/city-weather-searcher.component';
 import { StoreModule } from '@ngrx/store';
 import { CityWeatherRoutingModule } from './city-weather.module.routing';
 import { CityWeatherComponent } from './components/city-weather/city-weather.component';
@@ -10,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { cityWeatherReducer } from './reducers/city-weather.reducer';
 import { CommonModule } from '@angular/common';
 import { CityWeatherListComponent } from './components/city-weather-list/city-weather-list.component';
-import { CityWeatherListItemComponent } from './components/city-weather-list-item/city-list-item.component';
+import { CityWeatherListItemComponent } from './components/city-weather-list-item/city-weather-list-item.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { CityWeatherListItemComponent } from './components/city-weather-list-ite
     declarations: [
         CityWeatherComponent,
         CityWeatherListComponent,
-        CityWeatherListItemComponent
+        CityWeatherListItemComponent,
+        CityWeatherSearcherComponent
     ],
     providers: [
         FormBuilderService,

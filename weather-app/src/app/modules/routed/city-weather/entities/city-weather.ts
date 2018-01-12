@@ -14,7 +14,6 @@ export class CityWeather {
             this.id = data.city.id;
             this.name = data.city.name;
             this.country = data.city.country;
-            console.log(data.list);
             this.midnightTemperature = this.getMidnightTemperature(data.list);
             this.morningTemperature = this.getMorningTemperature(data.list);
             this.afternoonTemperature = this.getAfternoonTemperature(data.list);

@@ -20,14 +20,14 @@ export class CityWeatherActions {
     }
 
     /**
-     * Account contact created
+     * City weather fetched
      * @param cityWeather
      */
     public cityWeatherFetched(citiesWeather: CityWeather): any {
         return {
             type: CITY_WEATHER_ACTION_TYPES.CITY_WEATHER_FETCHED,
             payload: {
-                items: citiesWeather
+                item: citiesWeather
             }
         };
     }

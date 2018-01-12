@@ -14,13 +14,13 @@ export function cityWeatherReducer(state: CityWeatherState, action: any): CityWe
         case CITY_WEATHER_ACTION_TYPES.CITY_WEATHER_FETCHING:
             return state;
         case CITY_WEATHER_ACTION_TYPES.CITY_WEATHER_FETCHED:
-            const actionCityWeather = action.payload.items;
+            const actionCityWeather = action.payload.item;
             const alreadyExist = state.items.find((cityWeather: CityWeather) => cityWeather.id === actionCityWeather.id);
             if (alreadyExist) {
                 return state;
             }
             return Object.assign({}, state, {
-                items: [...state.items, action.payload.items]
+                items: [...state.items, action.payload.item]
             });
         default:
             return state;
